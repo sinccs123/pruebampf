@@ -1,0 +1,48 @@
+{
+  "name": "denuncias",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@formatjs/intl-localematcher": "^0.6.2",
+    "@headlessui/react": "^2.2.9",
+    "@heroicons/react": "^2.2.0",
+    "@n8n/chat": "^0.64.0",
+    "@socialgouv/matomo-next": "^1.9.2",
+    "@types/react-google-recaptcha": "^2.1.9",
+    "@usig-gcba/autocompleter": "^2.2.9",
+    "@vis.gl/react-google-maps": "^1.4.0",
+    "formik": "^2.4.6",
+    "lottie-react": "^2.4.1",
+    "negotiator": "^1.0.0",
+    "next": "^15.5.9",
+    "nodemailer": "^7.0.9",
+    "react": "19.2.3",
+    "react-datepicker": "^8.7.0",
+    "react-dom": "19.2.3",
+    "react-google-recaptcha": "^3.1.0",
+    "react-hot-toast": "^2.6.0",
+    "react-social-icons": "^6.25.0",
+    "sharp": "^0.34.4",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
+    "@types/negotiator": "^0.6.4",
+    "@types/node": "^24.7.0",
+    "@types/nodemailer": "^7.0.2",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.37.0",
+    "eslint-config-next": "15.5.4",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.9.3"
+  }
+}

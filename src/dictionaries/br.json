@@ -1,0 +1,330 @@
+{
+  "metadata": {
+    "title": "MPFCIUDAD | Denúncias",
+    "description": "Site com informações sobre Denúncias e Formulário de Denúncia Web do Ministério Público Fiscal de C.A.B.A."
+  },
+  "labels": {
+    "welcome": "Bem-vindo/a ao site de Denúncias do MPFCIUDAD",
+    "fieldRequired": "Campo obrigatório",
+    "invalidDocument": "Documento inválido",
+    "invalidPassport": "Passaporte inválido",
+    "finishing": "Enviando...",
+    "finish": "Enviar",
+    "check": "Consultar",
+    "checking": "Consultando...",
+    "back": "Voltar",
+    "select": "Selecionar",
+    "geolocalization": {
+      "error": "Não foi possível obter a localização"
+    },
+    "toast": {
+      "copySuccess": "ID de denúncia copiado para a área de transferência",
+      "denuncia": {
+        "envioOk": "Denúncia enviada com sucesso",
+        "envioError": "Erro ao enviar a denúncia, por favor verifique os campos e tente novamente.",
+        "envioOkDescripcion": "Sua denúncia foi enviada com sucesso. Seu número de acompanhamento é :"
+      }
+    },
+    "sectionTitles": {
+      "hecho": "DADOS DO FATO",
+      "denunciante": "Dados do denunciante",
+      "denunciado": "Dados do denunciado",
+      "adicionales": "DADOS ADICIONAIS",
+      "adjuntos": "ANEXOS"
+    },
+    "placeholders": {
+      "denunciaMotivo": "Selecione o motivo da sua denúncia",
+      "denunciaDetalle": "Descreva aqui com o máximo de detalhes possível o fato ocorrido que deseja denunciar",
+      "denunciaDireccionDesconocida": "Não sei o local do fato",
+      "denunciaDireccion": "Insira o endereço",
+      "denunciaFechaDesconocida": "Não sei a data ou a hora do fato",
+      "denunciaFecha": "Insira a data do fato",
+      "denunciaHoraInicio": "Hora de início",
+      "denunciaHoraFin": "Hora de término",
+      "denuncianteAnonimo": "Quero denunciar anonimamente",
+      "denuncianteNombre": "Nome",
+      "denuncianteApellido": "Sobrenome",
+      "denuncianteDocumentoTipo": "Tipo de documento",
+      "denuncianteDocumentoNumero": "Número do documento",
+      "denuncianteFechaDeNacimiento": "Data de nascimento",
+      "denuncianteNacionalidad": "Nacionalidade",
+      "denuncianteGenero": "Identidade de gênero",
+      "denuncianteDireccion": "Endereço",
+      "denuncianteTelefono": "Telefone",
+      "denuncianteEmail": "E-mail",
+      "denunciandoDesconocido": "Não sei os dados do denunciado",
+      "denunciadoTipoDePersona": "Tipo de pessoa",
+      "denunciadoNombre": "Nome",
+      "denunciadoApellido": "Sobrenome",
+      "denunciadoApodo": "Apelido",
+      "denunciadoDireccion": "Endereço",
+      "denunciadoEmail": "E-mail",
+      "denunciadoRedSocial": "Rede social",
+      "denunciadoTelefono": "Telefone",
+      "denunciadoDocumentoTipo": "Tipo de documento",
+      "denunciadoDocumentoNumero": "Número do documento",
+      "denunciadoFechaDeNacimiento": "Data de nascimento",
+      "denunciadoNacionalidad": "Nacionalidade",
+      "denunciadoGenero": "Identidade de gênero",
+      "denunciadoRazonSocial": "Razão social",
+      "denunciadoNombreDeFantasia": "Nome fantasia"
+    },
+    "email": {
+      "subject": "[MPFCIUDAD] - Denúncia %tipo%",
+      "title": "Denúncia %tipo%"
+    },
+    "aibot": {
+      "title": "MPFCABA Virtual Assistant",
+      "onlineMessage": "I'll reply as soon as possible",
+      "placeholder": "Ask your question...",
+      "placeholderSending": "I'm thinking..."
+    }
+  },
+  "menu": {
+    "home": "Início",
+    "reportNow": "Denunciar agora",
+    "howReport": "Como denunciar?",
+    "whatReport": "O que você pode denunciar?",
+    "whereReport": "Onde denunciar?",
+    "checkStatus": "Consultar estado",
+    "orientation": "Orientação"
+  },
+  "denunciaAhora": {
+    "text": "Se você ou alguém que conhece é vítima de algum crime, denuncie",
+    "subtext": "Podemos te ajudar",
+    "buttonText": "Clique para denunciar"
+  },
+  "comoDenunciar": {
+    "step1": "Passo 1",
+    "step1Title": "Faça sua denúncia",
+    "step1Text": "Você pode realizá-la presencialmente em nossos <a href='#whereReport' class='text-primary underline underline-offset-4 font-bold'>Pontos de Acesso</a> na Cidade.",
+    "reportOnlineTitle": "/mpfciudad",
+    "reportOnlineText": "DENÚNCIA ONLINE",
+    "reportEmailTitle": "denuncias@fiscalias.gob.ar",
+    "reportEmailText": "DENÚNCIA POR E-MAIL",
+    "reportPhoneTitle": "0800 33 347225",
+    "reportPhoneText": "DENÚNCIA POR TELEFONE",
+    "step2": "Passo 2",
+    "step2Title": "O que acontece depois",
+    "step2Text": "Uma equipe do Ministério Público vai analisar sua denúncia e, se necessário, entrará em contato para pedir mais informações e continuar a investigação. Se a investigação de sua denúncia avançar, ela será atribuída a uma promotoria específica para continuar o processo judicial. Em até 24 horas você receberá um e-mail de confirmação da sua denúncia. Se não o receber, pode solicitá-lo em <a href='mailto:denuncias@fiscalias.gob.ar'>denuncias@fiscalias.gob.ar</a> ou pelo <a href='tel:080033347225'>0800 33 347225 (FISCAL)</a>.",
+    "recommendationsTitle": "Recomendações",
+    "recommendation1": "Embora a denúncia possa ser anônima, quanto mais informações você fornecer, melhor.",
+    "recommendation2": "Se possível, forneça seus dados pessoais e os da pessoa que deseja denunciar. Você também pode fornecer os dados de outras testemunhas.",
+    "recommendation3": "Esclareça todas as informações sobre o fato que deseja denunciar. Por exemplo, local, data, hora ou qualquer outro dado que se lembre.",
+    "recommendation4": "Tente fornecer provas como fotos, vídeos, capturas de tela, áudios, documentos, etc."
+  },
+  "queDenunciar": [
+    {
+      "key": "acoso",
+      "title": "Acoso",
+      "description": "<p>Perseguir, vigilar, molestar o intimidar a una persona de manera insistente y regular. El acoso callejero es un tipo de violencia que se ejerce en un espacio público o en ambientes privados con acceso público.</p><br><p>Las conductas que se incluyen en el acoso sexual callejero son:  comentarios de índole sexual, exhibicionismo (mostrar partes íntimas del cuerpo), gestos obscenos, masturbación pública, persecución, arrinconamiento, contacto físico forzado o indebido, fotografías o grabaciones sin consentimiento.</p>",
+      "arts": "Art. 70 del Código Contravencional de la Ciudad"
+    },
+    {
+      "key": "vg",
+      "title": "Delitos de Género (Violencia de género)",
+      "description": "<p>La violencia de género es toda conducta que se ejerce contra las mujeres y otras personas en razón de su género, su identidad y/o expresión de género y su orientación sexual, afectando su vida, libertad, dignidad e integridad, como así también su seguridad personal.</p><br/><p>El Ministerio Público Fiscal tiene Fiscalías especializadas en Violencia de género que trabajan para defender el derecho de toda persona a tener una vida libre de violencia. Además, el MPF cuenta con la Oficina de Asistencia a la Víctima y al Testigo (OFAVyT), cuyo equipo interdisciplinario de profesionales brinda contención y asistencia en diversas áreas.</p><br/><p>Es importante destacar además que cuando hay indicios de que la vida de la víctima y/o sus hijos menores de edad se encuentran en peligro, el MPF realiza las gestiones necesarias para su protección.</p>",
+      "arts": "Arts. 70, 75, 85 bis CP, 125 bis CP"
+    },
+    {
+      "key": "amenazas",
+      "title": "Amenazas",
+      "description": "<p>Amenazas dirigidas a alarmar, amedrentar o a generar temor a una o más personas. Implican la intención de causar un mal grave, injusto, concreto y posible.  Las amenazas se agravan si se utilizan armas o si se dan en un contexto de violencia de género.</p>",
+      "arts": "Art. 149 bis del Código Penal"
+    },
+    {
+      "key": "narcotrafico",
+      "title": "Venta de drogas",
+      "description": "<p>Comercio, entrega o facilitación de sustancias estupefacientes, y/o tenencia de estupefacientes con fines de comercialización, siempre y cuando estas acciones se encuentren dirigidas al consumidor final de la droga ilícita.</p>",
+      "arts": "Arts. 5 y 14 de la Ley 23.737"
+    },
+    {
+      "key": "estafas",
+      "title": "Estafas",
+      "description": "<p>Defraudación mediante el uso de una tarjeta de crédito o débito, o fraudes a través de cualquier técnica de manipulación informática. También si una tarjeta fue falsificada, adulterada, robada, u obtenida mediante engaño o uso no autorizado de sus datos.</p>",
+      "arts": "Art. 173 inc. 15 del Código Penal"
+    },
+    {
+      "key": "violencia",
+      "title": "Abandono de personas",
+      "description": "<p>Abandono, omisión de cuidados o puesta en peligro de la vida o la salud de una persona incapaz de valerse por sí misma (ya sea por enfermedad, edad, discapacidad u otro motivo), por parte de quien tiene la obligación de cuidarla o mantenerla.</p><br><p>Se coloca a una persona en situación de desamparo cuando se la deja sin los cuidados básicos necesarios para su supervivencia, como alimentación, abrigo, atención médica u otros.</p><br><p>El Ministerio Público Fiscal de la Ciudad cuenta con un equipo de intervención domiciliaria que va al domicilio o coordina un encuentro personal con la persona víctima, en los casos en que ésta no pueda acercarse a la fiscalía.</p>",
+      "arts": "Art. 106 y 107 del Código Penal"
+    },
+    {
+      "key": "discriminacion_xenofobia",
+      "title": "Discriminación y xenofobia",
+      "description": "<p>Discriminar es menoscabar, restringir o excluir a alguien por motivos religiosos, pertenencia étnica, condición social, orientación o identidad sexual, características físicas, nacionalidad, opinión política, entre otros.</p><br><p>La discriminación afecta, restringe o impide el derecho de todas las personas a ser tratadas de manera igualitaria.</p>",
+      "arts": "Art. 71 de la Ley Nacional 23.592"
+    },
+    {
+      "key": "grooming",
+      "title": "Grooming",
+      "description": "<p>El grooming es el acoso por parte de una persona adulta a un niño, niña o adolescente, a través de medios electrónicos, para cometer cualquier delito contra su integridad sexual. El contacto puede ser a través de redes sociales, juegos online o cualquier plataforma de mensajería.</p><br>Ante un caso de grooming es importante no bloquear al usuario ni eliminar los chats de las conversaciones, ya que serán útiles para la investigación y pueden ayudar a identificar al agresor.</p>",
+      "arts": "Art. 131 del Código Penal"
+    },
+    {
+      "key": "explotacion_sexual",
+      "title": "Promoción y/o facilitación de la prostitución",
+      "description": "<p>Cuando una persona u organización se aprovecha de otra persona que ejerce la prostitución, a través del engaño, amenaza o violencia, o en el contexto de una relación desigual de poder y/o dependencia.</p><br>Por lo general son delitos que se basan en las desigualdades de género y de poder, en el aprovechamiento de situaciones de vulnerabilidad de las víctimas.</p>",
+      "arts": "Art. 125 bis del Código Penal"
+    },
+    {
+      "key": "contaminacion",
+      "title": "Contaminación - Delitos ambientales",
+      "description": "<p>Delitos que se cometen contra los diversos elementos que componen el ambiente, que afectan la seguridad pública y el medio ambiente o atentan contra la preservación de la diversidad biológica. Algunos ejemplos de estos delitos son el arrojo de sustancias insalubres a la vía pública, la producción o el tratamiento indebido de residuos peligrosos, el comercio de productos y subproductos derivados de la caza clandestina o cualquier otra conducta ilícita que ponga en riesgo a la salud pública y/o el ambiente.</p>",
+      "arts": "Ley Nacional 24.051, 25.612 y 25.675"
+    },
+    {
+      "key": "maltrato_animal",
+      "title": "Maltrato animal",
+      "description": "<p>El maltrato animal comprende los comportamientos que causan dolor o estrés a los animales, así como la omisión de sus cuidados básicos necesarios. Toda persona que tenga un animal doméstico a cargo debe velar por las 5 libertades del bienestar animal: libertad de hambre y sed; libertad de dolor, lesión y enfermedad; libertad de incomodidad; libertad de miedo y angustia; libertad para expresar un comportamiento natural.</p><br><p>En la Ciudad de Buenos Aires solo está autorizada la tenencia de animales domésticos. La tenencia de animales silvestres, autóctonos o exóticos está prohibida, salvo expresa autorización del Ministerio de Ambiente y Biodiversidad de La Nación, en el marco de la Ley Nacional de Conservación de la Fauna.</p><br><p>En cuanto a la venta, solo se pueden comercializar animales domésticos en veterinarias o pets shops habilitados y con el certificado médico-veterinario al día, aunque los animales no pueden estar exhibidos en vidrieras.</p><br><p>Por último, los criaderos en la Ciudad de Buenos Aires están expresamente prohibidos. (Ordenanza 41.831/87.)</p>",
+      "arts": "Ley Nacional 14.346"
+    },
+    {
+      "key": "ruidos_molestos",
+      "title": "Ruidos molestos",
+      "description": "<p>Sonidos que por su alto volumen, reiteración o persistencia exceden la normal tolerancia.</p>",
+      "arts": "Art. 97 del Código Contravencional"
+    },
+    {
+      "key": "eventos_masivos",
+      "title": "Delitos en recitales y eventos deportivos",
+      "description": "<p>Se trata de los delitos cometidos en el contexto de espectáculos masivos. Algunos ejemplos son el uso indebido del espacio público, la reventa de entradas, el cuidado de coches sin autorización, la portación de armas y la alteración del desarrollo normal del espectáculo.</p>",
+      "arts": "Ley Nacional 20.655 y 23.184"
+    },
+    {
+      "key": "violacion_clausura",
+      "title": "Violación Clausura",
+      "description": "<p>Cuando se incumple una clausura impuesta por una autoridad judicial o administrativa. La medida de clausurar puede estar vinculada a la reducción de un riesgo para la salud o la seguridad pública.</p>",
+      "arts": "Art. 83 del Código Contravencional"
+    },
+    {
+      "key": "hostigamiento",
+      "title": "Hostigamiento",
+      "description": "<p>Intimidar, asediar, maltratar o comportarse de manera amenazante para generar temor o molestia en la víctima a través de gestos, palabras u acciones, de manera insistente o reiterada. También se habla de hostigamiento digital si la víctima es acosada o intimidada por medios digitales.</p>",
+      "arts": "Art. 52 y art. 71 ter del Código Contravencional."
+    },
+    {
+      "key": "cuidacoches",
+      "title": "Cuidar coches sin autorización",
+      "description": "<p>Prestar servicio de cuidado u estacionamiento de vehículos en la vía pública sin autorización y a cambio de una retribución económica.</p>",
+      "arts": "Art. 91 del Código Contravencional"
+    },
+    {
+      "key": "danios",
+      "title": "Daños",
+      "description": "<p>Alterar, destruir, inutilizar o romper, de manera total o parcial, un objeto material o inmueble. También se refiere a los daños o alteraciones que se causan a los sistemas informáticos, ya sea modificando documentos, programas o datos para provocar daños.</p>",
+      "arts": "Art. 183 del Código Penal"
+    },
+    {
+      "key": "ejercicio_ilegal_medicina",
+      "title": "Ejercicio ilegal de la medicina",
+      "description": "<p>La realización de prácticas o tratamientos médicos sin la debida autorización o título habilitante. También incluye prescribir o aplicar medicamentos, anunciar curas a enfermedades, facilitar o proveer medicamentos o elementos para el ejercicio ilegal de la medicina, o bien prestar el título o nombre a otras personas.</p>",
+      "arts": "Art. 208 del Código Penal"
+    },
+    {
+      "key": "portacion",
+      "title": "Portación, tenencia y suministro ilegal de armas de fuego",
+      "description": "<p>Para tener un arma y/o trasladarla es necesario contar con una autorización legal. En caso contrario, hay un delito.</p><br><p>La tenencia es la constancia que habilita a una persona a mantener el arma en su poder, transportarla descargada y separada de sus municiones y usarla con fines lícitos (caza, tiro deportivo, otros). La diferencia con la portación es que en este caso la persona lleva el arma consigo, mientras que la tenencia implica tenerla en un lugar fijo.</p>",
+      "arts": "Art. 189 bis del Código Penal"
+    },
+    {
+      "key": "exhibiciones_obscenas",
+      "title": "Exhibiciones obscenas",
+      "description": "<p>Mostrar los genitales en público. Estas acciones forman parte de los delitos contra la integridad sexual. El delito y las penas se agravan si las personas afectadas son menores de 18 años y también cuando la víctima es menor de 13 años, haya dado su consentimiento o no.</p>",
+      "arts": "Art. 129 del Código Penal"
+    },
+    {
+      "key": "violacion_domicilio",
+      "title": "Violación de domicilio",
+      "description": "<p>Entrar a un domicilio ajeno, contra la voluntad de la persona propietaria o de quien tenga el derecho a ocuparlo. La inviolabilidad del domicilio es un derecho constitucional y nadie puede ser objeto de intrusiones arbitrarias. Incluso todo allanamiento que se realice en el marco de la ley debe contar con la autorización judicial. La violación de domicilio es un delito contra la libertad.</p>",
+      "arts": "Art. 150 del Código Penal"
+    },
+    {
+      "key": "usurpacion",
+      "title": "Usurpación",
+      "description": "<p>Es usurpación cuando una o más personas despojan a alguien de la posesión o tenencia de un inmueble, a través de violencia, amenazas, engaños, abusos de confianza o clandestinidad. Este despojo de un inmueble puede ser total o parcial.</p>",
+      "arts": "Art. 181 Código Penal"
+    },
+    {
+      "key": "delitos_informaticos",
+      "title": "Delitos Informáticos",
+      "description": "<p>Son los delitos y contravenciones que se cometen a través de Internet y con el uso de dispositivos electrónicos y redes informáticas. Pueden ser robo de datos, fraudes, acoso u hostigamiento digital, difusión no autorizada de imágenes o grabaciones íntimas, suplantación de identidad, entre otros.</p>",
+      "arts": ""
+    },
+    {
+      "key": "juego_ilegal",
+      "title": "Juego Ilegal",
+      "description": "<p>Toda situación relacionada con cualquier modalidad de juegos de azar ilegal, ya sea a través de una plataforma online o de un espacio físico. Por ejemplo: organización y explotación de juego sin habilitación; promoción, comercio u oferta de juegos sin habilitación, violación de reglamentación de juegos autorizados por las leyes locales, influencers o famosos que publiciten en sus redes o programas juegos de azar ilegales.</p><br><p>Si el sitio online o la casa es legal, debe tener visibles los datos de LOTBA y los términos y condiciones. Si el sitio online no termina en .bet, es probable que sea ilegal.</p>",
+      "arts": "Art. 301 bis del Código Penal"
+    },
+    {
+      "key": "espacio_publico",
+      "title": "Uso indebido del espacio público",
+      "description": "<p>La realización de actividades lucrativas sin autorización y/o la ocupación indebida del espacio público.</p>",
+      "arts": "Art. 99 del Código Contravencional"
+    },
+    {
+      "key": "abuso_sexual_infantil",
+      "title": "Produccion, tenencia o distribución de contenido de abuso sexual infantil",
+      "description": "<p>Tenencia, producción, distribución, difusión, facilitación o comercialización de imágenes o videos con contenido de abuso sexual de niños, niñas y adolescentes.</p>",
+      "arts": "Art. 128 del Código Penal"
+    },
+    {
+      "key": "ciberfraudes",
+      "title": "Ciberfraudes",
+      "description": "<p>El Ministerio Público Fiscal de la Ciudad dispuso una serie de medidas relacionadas con los delitos que puedan ser calificados como defraudaciones que involucren operaciones de transferencias desconocidas o producto de engaño (previsto en el artículo 173 –inc. 15 y 16- del Código Penal).</p><br><p>Podrán bloquearse preventivamente las cuentas y congelarse los saldos en cuestión de manera urgente por el término de 60 días los casos que:<ul><li>1) Ocurran en la Ciudad de Buenos Aires (para lo que se tendrá en cuenta preferentemente el domicilio de la víctima y/o el lugar de radicación de la cuenta);</li><li>2) El monto defraudado sea igual o superior a $3.000.000 (tres millones de pesos).</li><li>3) El hecho se denuncie dentro de las 24 horas de cometido.</li></ul></p><br><p>IMPORTANTE: El/la denunciante deberá aportar elementos –como comprobantes o notificaciones de transferencia- que den cuenta del monto de la misma, su fecha, hora, cuenta de origen y cuenta de destino.</p>",
+      "arts": ""
+    },
+    {
+      "key": "otros",
+      "title": "Otros",
+      "description": "Otros delitos que no encuadren en las categorías anteriores.",
+      "arts": ""
+    }
+  ],
+  "dondeDenunciar": {
+    "selectPlaceholder": "Selecione um bairro"
+  },
+  "queQueresDenunciar": {
+    "title": "O que você quer denunciar?",
+    "recommendationBox": {
+      "title": "Recomendações",
+      "text": "Forneça seus dados pessoais e, se os tiver, os dados da pessoa que deseja denunciar. Esclareça todas as informações que possui sobre o fato denunciado, como local, data e hora. Não exclua provas como fotos, vídeos, capturas de tela, áudios, documentos, etc. Não apague conversas de texto e conteúdo multimídia de pessoas envolvidas e/ou testemunhas."
+    },
+    "recommendationEmailBox": {
+      "title": "Sugestão",
+      "text": "Digite seu endereço de e-mail para receber uma cópia do formulário da sua denúncia."
+    }
+  },
+  "consultaDenuncia": {
+    "title": "Estado da sua denúncia",
+    "subtitle": "Digite o número de acompanhamento para ver o estado da sua denúncia",
+    "inputPlaceholder": "Número de acompanhamento",
+    "notFound": "Não foi encontrada nenhuma denúncia com esse número de acompanhamento.",
+    "labels": {
+      "seguimiento": "N° Acompanhamento",
+      "denuncia": "N° Denúncia",
+      "legajo": "N° Processo",
+      "radicacion": "Registro",
+      "direccion": "Endereço",
+      "contacto": "Contato"
+    }
+  },
+  "generos": [
+    { "value": "M", "label": "Masculino" },
+    { "value": "F", "label": "Feminino" },
+    { "value": "MUJER TRANS", "label": "Mulher Trans" },
+    { "value": "VARON TRANS", "label": "Homem Trans" },
+    { "value": "NO BINARIA", "label": "Não-binário" }
+  ],
+  "tiposDocumentos": [
+    { "value": "DNI", "label": "RG" },
+    { "value": "CUIT", "label": "CNPJ" },
+    { "value": "PASAPORTE", "label": "PASSAPORTE" }
+  ],
+  "tiposPersonas": [
+    { "value": "FISICA", "label": "FÍSICA" },
+    { "value": "JURIDICA", "label": "JURÍDICA" }
+  ]
+}

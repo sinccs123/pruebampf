@@ -1,0 +1,579 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Custom colors from your tailwind.config.ts */
+  --color-primary: #006272;
+  --color-secondary: #0ba7be;
+
+  /* Custom font family */
+  --font-family-heebo: Heebo, sans-serif;
+
+  /* Custom background images */
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+}
+
+@layer components {
+  .input {
+    @apply block bg-white relative placeholder:text-black w-full rounded-xl shadow-md appearance-none text-base p-3 pr-8 border focus:outline-none focus:ring-1 border-slate-300 ring-slate-300;
+  }
+  .inputRequired {
+    @apply border-2 border-red-500 ring-red-500;
+  }
+  .inputOk {
+    @apply border-slate-300 border-r-[12px] border-r-emerald-500 ring-slate-300 bg-emerald-50;
+  }
+  .inputError {
+    @apply border-red-500 ring-red-500;
+  }
+  .error {
+    @apply text-xs text-red-500 mt-1;
+  }
+  .checkbox {
+    @apply h-4 w-4 mr-2 rounded-sm shadow-md border focus:outline-none focus:ring-1 border-slate-300 ring-slate-300;
+  }
+
+  #reportNow,
+  #howReport,
+  #whatReport,
+  #whereReport {
+    @apply scroll-m-[150px] lg:scroll-m-[50px];
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.denunciaAhoraSticky {
+  background-color: #006272 !important;
+  background-image: none !important;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .denunciaAhora,
+  .how-report-main,
+  .what-report-main,
+  #whereReport,
+  .recommendations-block {
+    padding-left: 7rem !important;
+    padding-right: 7rem !important;
+  }
+
+  .denunciaAhora {
+    background-size: 24rem auto !important;
+    background-position: calc(100% - 7rem) bottom !important;
+  }
+
+  .recommendations-block {
+    background-color: #d3d8e0 !important;
+    background-size: 20rem auto !important;
+    background-position: calc(100% - 3rem) bottom !important;
+  }
+
+  .recommendations-list {
+    width: 74% !important;
+    margin-right: auto !important;
+  }
+
+  .recommendations-item {
+    max-width: 34rem !important;
+  }
+
+  .how-report-types {
+    column-gap: 1.8rem !important;
+  }
+
+  .how-report-type-box {
+    column-gap: 0.75rem !important;
+  }
+
+  .how-report-type-box-phone {
+    min-width: fit-content;
+  }
+
+  .how-report-type-content-phone {
+    padding-left: 0.1rem !important;
+  }
+
+  .how-report-type-title-phone {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    white-space: nowrap !important;
+  }
+
+  .how-report-step-copy a[href^='tel:'] {
+    display: inline-block;
+    padding-left: 0.08em;
+    font-family: Arial, sans-serif;
+    white-space: nowrap !important;
+  }
+
+  .how-report-type-title {
+    font-size: 1.1rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .how-report-type-caption {
+    font-size: 0.9rem !important;
+    line-height: 1.10 !important;
+  }
+
+  .how-report-main > .text-xl > div:first-child .how-report-step-number {
+    margin-bottom: 0.1rem !important;
+  }
+
+  .how-report-main > .text-xl > div:first-child .how-report-step-title {
+    margin-top: 0 !important;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1535px) {
+  .header-menu-row {
+    column-gap: 1rem !important;
+  }
+
+  .header-menu-link {
+    font-size: 1rem !important;
+  }
+
+  .denunciaAhora {
+    padding-left: 16rem !important;
+    padding-right: 16rem !important;
+    background-position: calc(100% - 16rem) bottom !important;
+  }
+
+  .how-report-main,
+  .what-report-main,
+  #whereReport,
+  .recommendations-block {
+    padding-left: 16rem !important;
+    padding-right: 16rem !important;
+  }
+
+  .recommendations-block {
+    background-color: #d3d8e0 !important;
+    background-size: 22rem auto !important;
+    background-position: calc(100% - 16rem) bottom !important;
+  }
+
+  .recommendations-list {
+    width: 72% !important;
+    margin-right: auto !important;
+  }
+
+  .recommendations-item {
+    max-width: 40rem !important;
+  }
+
+  .how-report-types {
+    column-gap: 2.5rem !important;
+  }
+
+  .how-report-type-box-phone {
+    min-width: fit-content;
+  }
+
+  .how-report-type-content-phone {
+    padding-left: 0.1rem !important;
+  }
+
+  .how-report-type-title-phone {
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    white-space: nowrap !important;
+  }
+
+  .how-report-step-copy a[href^='tel:'] {
+    display: inline-block;
+    padding-left: 0.08em;
+    font-family: Arial, sans-serif;
+    white-space: nowrap !important;
+  }
+
+  .how-report-type-title {
+    font-size: 1.4rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .how-report-type-caption {
+    font-size: 1rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .how-report-main > .text-xl > div:first-child .how-report-step-title {
+    line-height: 0.8rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 13px;
+  }
+
+  .ultra-wide-type [class*='2xl:text-6xl'] {
+    font-size: 2.2rem !important;
+  }
+
+  .ultra-wide-type [class*='2xl:text-5xl'] {
+    font-size: 1.8rem !important;
+  }
+
+  .ultra-wide-type [class*='2xl:text-2xl'] {
+    font-size: 1.1rem !important;
+  }
+
+  .ultra-wide-type [class*='2xl:text-xl'] {
+    font-size: 0.95rem !important;
+  }
+
+  .ultra-wide-type [class*='2xl:text-[2.5rem]'] {
+    font-size: 1.65rem !important;
+  }
+
+  .ultra-wide-type [class*='2xl:text-[38px]'] {
+    font-size: 24px !important;
+  }
+
+  .ultra-wide-type [class*='2xl:text-[30px]'] {
+    font-size: 20px !important;
+  }
+
+  .ultra-wide-type [class*='2xl:text-[27px]'] {
+    font-size: 18px !important;
+  }
+
+  .ultra-wide-type [class*='2xl:text-[22px]'] {
+    font-size: 16px !important;
+  }
+
+  .ultra-wide-type [class*='2xl:leading-[4.4rem]'] {
+    line-height: 2.7rem !important;
+  }
+
+  .ultra-wide-type [class*='2xl:leading-[35px]'] {
+    line-height: 1.35 !important;
+  }
+}
+
+@media (min-width: 1536px) and (max-width: 1919px) {
+  .ultra-wide-type [class*='2xl:px-32']:not(.denunciaAhora):not(.how-report-main) {
+    padding-left: 32rem !important;
+    padding-right: 32rem !important;
+  }
+
+  .ultra-wide-type [class*='2xl:p-32'] {
+    padding-left: 32rem !important;
+    padding-right: 32rem !important;
+  }
+
+  .ultra-wide-type .denunciaAhora {
+    padding-left: 30rem !important;
+    padding-right: 20rem !important;
+    background-position: calc(100% - 20rem) bottom !important;
+    background-size: min(38rem, calc(100% - 40rem - 34rem - 3rem)) auto !important;
+  }
+
+  .ultra-wide-type .denunciaAhora [class*='2xl:text-6xl'] {
+    font-size: 2.8rem !important;
+    line-height: 3.2rem !important;
+  }
+
+  .ultra-wide-type .denunciaAhora [class*='2xl:text-5xl'] {
+    font-size: 2.2rem !important;
+  }
+
+  .ultra-wide-type .denunciaAhora [class*='2xl:w-[1000px]'] {
+    width: 34rem !important;
+  }
+
+  .ultra-wide-type .how-report-main {
+    padding-left: 32rem !important;
+    padding-right: 32rem !important;
+  }
+
+  .ultra-wide-type .how-report-heading {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .ultra-wide-type .how-report-step-number {
+    line-height: 1 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .ultra-wide-type .how-report-step-title {
+    line-height: 1 !important;
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .ultra-wide-type .how-report-type-icon {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .ultra-wide-type .how-report-type-box {
+    min-width: 0;
+    column-gap: 0.5rem;
+    width: max-content;
+  }
+
+  .ultra-wide-type .how-report-types {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+    column-gap: 3rem !important;
+    width: 100%;
+  }
+
+  .ultra-wide-type .how-report-types .how-report-type-box:nth-child(3) {
+    padding-left: 4rem;
+  }
+
+  .ultra-wide-type .how-report-types .how-report-type-box:nth-child(1) {
+    margin-left: -2rem;
+  }
+
+  .ultra-wide-type .how-report-type-content {
+    min-width: 0;
+    padding-left: 0;
+  }
+
+  .ultra-wide-type .how-report-type-content-phone {
+    padding-left: 0rem !important;
+  }
+
+  .ultra-wide-type .how-report-type-title {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .ultra-wide-type .how-report-type-title-phone {
+    display: inline-block;
+    padding-left: 0;
+    font-family: Arial, sans-serif;
+    white-space: nowrap !important;
+  }
+
+  .ultra-wide-type .how-report-step-copy a[href^='tel:'] {
+    display: inline-block;
+    padding-left: 0.08em;
+    font-family: Arial, sans-serif;
+    white-space: nowrap !important;
+  }
+
+  .ultra-wide-type .how-report-type-caption {
+    font-size: 1.2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .ultra-wide-type .what-report-main {
+    padding-left: 32rem !important;
+    padding-right: 32rem !important;
+  }
+
+  .ultra-wide-type .recommendations-block {
+    padding-left: 32rem !important;
+    background-position: calc(100% - 30rem) bottom !important;
+    background-size: 24rem auto !important;
+    background-color: #d3d8e0 !important;
+  }
+
+  .ultra-wide-type .recommendations-list {
+    width: 62% !important;
+  }
+
+  .ultra-wide-type .recommendations-item {
+    max-width: 56rem;
+  }
+
+  .ultra-wide-type .header-menu-row {
+    column-gap: 1.5rem !important;
+  }
+
+  .ultra-wide-type .header-menu-link {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .ultra-wide-type .sticky-report-button {
+    top: 84px !important;
+    left: 4rem !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .ultra-wide-type [class*='2xl:px-32']:not(.denunciaAhora):not(.how-report-main) {
+    padding-left: 32rem !important;
+    padding-right: 32rem !important;
+  }
+
+  .ultra-wide-type [class*='2xl:p-32'] {
+    padding-left: 32rem !important;
+    padding-right: 32rem !important;
+  }
+
+  .ultra-wide-type .denunciaAhora {
+    padding-left: 32rem !important;
+    padding-right: 32rem !important;
+    background-position: calc(100% - 32rem) bottom !important;
+    background-size: min(36rem, calc(100% - 64rem - 34rem - 2rem)) auto !important;
+  }
+
+  .ultra-wide-type .how-report-main {
+    padding-left: 32rem !important;
+    padding-right: 32rem !important;
+  }
+
+  .ultra-wide-type .what-report-main {
+    padding-left: 32rem !important;
+    padding-right: 32rem !important;
+  }
+
+  .ultra-wide-type .recommendations-block {
+    padding-left: 34rem !important;
+    background-position: calc(100% - 34rem) bottom !important;
+    background-size: 24rem auto !important;
+    background-color: #d3d8e0 !important;
+  }
+}
+
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../public/fonts/Heebo-VariableFont_wght.ttf') format('ttf');
+}
+
+.font-heebo {
+  font-family: 'Heebo', sans-serif;
+}
+
+.sectionTitle:before {
+  position: absolute;
+  top: -14px;
+  width: 24px;
+  border-bottom: 3px solid #006272;
+  content: '';
+  left: calc(50% - 12px);
+}
+
+@media (min-width: 1536px) {
+  .sectionTitle:before {
+    top: -23px;
+  }
+}
+
+/*datePicker*/
+div.react-datepicker-wrapper {
+  display: block;
+}
+
+div.react-datepicker-popper {
+  z-index: 2;
+}
+
+.react-datepicker__input-container .react-datepicker__calendar-icon {
+  right: 10px;
+  z-index: 1;
+  top: 6px;
+  width: auto;
+  height: 20px;
+  color: rgb(156, 163, 175);
+}
+
+.react-datepicker__input-container .input {
+  padding: 0.75rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .denunciaAhora {
+    background: #006272 url('/images/denuncia-ahora.svg') no-repeat;
+    background-position: calc(100% - 4rem) bottom;
+    background-size: auto 80%;
+    background-attachment: local;
+    background-clip: padding-box;
+  }
+}
+
+@media (min-width: 1024px) {
+  .denunciaAhora {
+    background-position: calc(100% - 4rem) bottom;
+    background-size: auto 85%;
+  }
+
+  .recomendaciones-bg {
+    background: url('/images/recomendaciones.svg') no-repeat right bottom;
+    background-size: contain;
+  }
+}
+
+@media (min-width: 1280px) {
+  .denunciaAhora {
+    background-position: calc(100% - 4rem) bottom;
+    background-size: auto 96%;
+  }
+}
+
+@media (min-width: 1536px) {
+  .denunciaAhora {
+    background-position: calc(100% - 5rem) bottom !important;
+    background-size: 90rem auto !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .denunciaAhora {
+    background-position: calc(100% - 5rem) bottom !important;
+    background-size: 120rem auto !important;
+  }
+}
+
+/* Estilos para chat n8n */
+#n8n-chat {
+  .chat-window-toggle {
+    /* background: #0ba7be; */
+    background: url('/images/leyIA_Icon_00.png') no-repeat center;
+    background-size: contain;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    width: 80px;
+    height: 80px;
+  }
+
+  .chat-window-toggle > svg {
+    display: none;
+  }
+
+  .chat-window-toggle:hover {
+    /* background: #0a95ab; */
+    background: url('/images/leyIA_Icon_02.png') no-repeat center;
+    background-size: contain;
+  }
+
+  .chat-window-toggle:active {
+    background: url('/images/leyIA_Icon_02.png') no-repeat center;
+    background-size: contain;
+  }
+
+  .chat-header {
+    background: #006272;
+  }
+
+  .chat-message-from-user {
+    background: #0ba7be;
+  }
+
+  .chat-input-send-button:not(:disabled) {
+    color: #006272;
+  }
+}
