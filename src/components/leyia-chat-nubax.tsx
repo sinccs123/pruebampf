@@ -3,10 +3,11 @@
 import Lottie from 'lottie-react';
 import { useCallback, useEffect, useState } from 'react';
 
-type LeyIAButtonVisualState = 'idle' | 'hover-in' | 'hover-out';
+type LeyIAButtonVisualState = 'idle' | 'hover-in' | 'hover-out' | 'click';
 
 const LEYIA_BUTTON_ASSETS = {
   idle: '/images/leyia-idle.png',
+  click: '/images/leyia-click.png',
   hoverInLottie: '/images/leyia-hover-in.json',
   hoverOutLottie: '/images/leyia-hover-out.json',
   hoverOutFallbackVideo: '/images/leyia-hover-out.webm',
@@ -18,6 +19,8 @@ const BUTTON_SIZE_CLASSES =
 
 const ICON_SIZE_CLASSES =
   'h-20 w-20 md:h-20 md:w-20 lg:h-22 lg:w-22 xl:h-22 xl:w-22 2xl:h-25 2xl:w-25';
+
+const HOVER_OUT_DELAY_MS = 180;
 
 interface LeyIAChatNubaxProps {
   buttonClassName?: string;
@@ -31,8 +34,12 @@ export default function LeyIAChatNubax({
   const [isOpen, setIsOpen] = useState(false);
   const [isIframeLoaded, setIsIframeLoaded] = useState(false);
   const [isHoveringButton, setIsHoveringButton] = useState(false);
+  const [isPressingButton, setIsPressingButton] = useState(false);
+  const [isClickLocked, setIsClickLocked] = useState(false);
   const [buttonVisualState, setButtonVisualState] =
     useState<LeyIAButtonVisualState>('idle');
+  const [isHoverOutQueued, setIsHoverOutQueued] = useState(false);
+  const [hasHoverInCompleted, setHasHoverInCompleted] = useState(false);
   const [hoverInAnimationData, setHoverInAnimationData] = useState<object | null>(null);
   const [hoverOutAnimationData, setHoverOutAnimationData] = useState<object | null>(null);
 
@@ -86,29 +93,123 @@ export default function LeyIAChatNubax({
       if (!prev && !isIframeLoaded) {
         setIsIframeLoaded(true);
       }
+
+      if (prev) {
+        setIsClickLocked(false);
+        setIsHoverOutQueued(false);
+        setHasHoverInCompleted(false);
+        setButtonVisualState('hover-out');
+      } else if (isHoveringButton && hoverInAnimationData) {
+        setIsClickLocked(true);
+        setButtonVisualState('hover-in');
+      } else {
+        setIsClickLocked(true);
+        setButtonVisualState('idle');
+      }
+
       return !prev;
     });
-  }, [isIframeLoaded]);
+  }, [hoverInAnimationData, isHoveringButton, isIframeLoaded]);
 
   const handleMouseEnter = useCallback(() => {
     setIsHoveringButton(true);
-    setButtonVisualState(hoverInAnimationData ? 'hover-in' : 'idle');
-  }, [hoverInAnimationData]);
+    setIsHoverOutQueued(false);
+    setHasHoverInCompleted(false);
+    if (!isClickLocked) {
+      setButtonVisualState(hoverInAnimationData ? 'hover-in' : 'idle');
+    }
+  }, [hoverInAnimationData, isClickLocked]);
 
   const handleMouseLeave = useCallback(() => {
     setIsHoveringButton(false);
-    setButtonVisualState((prev) => (prev === 'idle' ? 'idle' : 'hover-out'));
+    setIsPressingButton(false);
+    if (!isClickLocked) {
+      setIsHoverOutQueued(true);
+    }
+  }, [isClickLocked]);
+
+  const handlePressStart = useCallback(() => {
+    setIsPressingButton(true);
+    if (isClickLocked) {
+      return;
+    }
+
+    setIsClickLocked(true);
+    setButtonVisualState('click');
+  }, [isClickLocked]);
+
+  const handlePressEnd = useCallback(() => {
+    setIsPressingButton(false);
   }, []);
+
+  const handleKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLButtonElement>) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        setIsPressingButton(true);
+      }
+    },
+    []
+  );
+
+  const handleKeyUp = useCallback(
+    (event: React.KeyboardEvent<HTMLButtonElement>) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        setIsPressingButton(false);
+      }
+    },
+    []
+  );
+
+  useEffect(() => {
+    if (!isHoverOutQueued) {
+      return;
+    }
+
+    const timeout = window.setTimeout(() => {
+      setButtonVisualState((prev) => {
+        if (prev === 'idle') {
+          return prev;
+        }
+
+        if (prev === 'hover-in') {
+          if (!isHoveringButton && hasHoverInCompleted) {
+            return 'hover-out';
+          }
+
+          return prev;
+        }
+
+        return 'hover-out';
+      });
+    }, HOVER_OUT_DELAY_MS);
+
+    return () => window.clearTimeout(timeout);
+  }, [isHoverOutQueued, isHoveringButton, hasHoverInCompleted]);
 
   const handleButtonAnimationEnd = useCallback(() => {
     setButtonVisualState((prev) => {
+      if (isClickLocked && prev !== 'hover-out') {
+        return 'click';
+      }
+
       if (prev === 'hover-out') {
+        setIsHoverOutQueued(false);
+        setHasHoverInCompleted(false);
         return isHoveringButton ? 'hover-in' : 'idle';
       }
 
-      return isHoveringButton ? prev : 'hover-out';
+      if (prev === 'hover-in') {
+        setHasHoverInCompleted(true);
+        return isHoveringButton ? 'hover-in' : 'hover-out';
+      }
+
+      if (prev === 'click') {
+        return isHoveringButton && hoverInAnimationData ? 'hover-in' : 'idle';
+      }
+
+      return prev;
     });
-  }, [isHoveringButton]);
+  }, [hoverInAnimationData, isClickLocked, isHoveringButton]);
 
   return (
     <>
@@ -126,23 +227,38 @@ export default function LeyIAChatNubax({
         onClick={toggleChat}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onMouseDown={handlePressStart}
+        onMouseUp={handlePressEnd}
+        onTouchStart={handlePressStart}
+        onTouchEnd={handlePressEnd}
+        onTouchCancel={handlePressEnd}
         onFocus={handleMouseEnter}
         onBlur={handleMouseLeave}
+        onKeyDown={handleKeyDown}
+        onKeyUp={handleKeyUp}
         className={`
           fixed bottom-5 right-5 ${BUTTON_SIZE_CLASSES}
-          border-2 border-[#0BA7BE] overflow-hidden
+          border-2 overflow-hidden
           bg-primary hover:cursor-pointer
           rounded-full shadow-lg
           flex items-center justify-center
-          transition-colors duration-200 ease-in-out
+          transition-all duration-200 ease-in-out
           focus:outline-none focus:ring-4 focus:ring-[#0BA7BE]/50
+          ${isPressingButton ? 'border-[#0A8FA3] ring-4 ring-[#0BA7BE]/30 scale-95 shadow-md' : 'border-[#0BA7BE]'}
           z-50
           ${buttonClassName}
         `}
         aria-label={isOpen ? 'Cerrar agente' : 'Abrir agente'}
         type='button'
       >
-        {buttonVisualState === 'idle' ? (
+        {buttonVisualState === 'click' || isClickLocked ? (
+          <img
+            src={LEYIA_BUTTON_ASSETS.click}
+            alt='Asistente Virtual LeyIA MPFCIUDAD'
+            className={`pointer-events-none ${ICON_SIZE_CLASSES} pb-1 select-none object-contain`}
+            draggable={false}
+          />
+        ) : buttonVisualState === 'idle' ? (
           <img
             src={LEYIA_BUTTON_ASSETS.idle}
             alt='Asistente Virtual LeyIA MPFCIUDAD'

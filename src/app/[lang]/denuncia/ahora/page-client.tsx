@@ -19,7 +19,6 @@ import {
 
 import { Dictionary } from '@/lib/dictionary';
 
-import useUploadFiles from '@/hooks/use-upload-files';
 
 import DenuncianteSection from '@/app/[lang]/denuncia/ahora/sections/denunciante';
 import HechoSection from '@/app/[lang]/denuncia/ahora/sections/hecho';
@@ -60,11 +59,9 @@ export default function FormDenunciaNewClient({
   const formDenunciaRef = useRef<HTMLFormElement>(null);
   const [recaptchaToken, setRecaptchaToken] = useState<string>('');
   const [ip, setIp] = useState<string>('');
+  // Cambia para remontar UploadFiles y limpiar sus archivos al resetear el form.
+  const [uploadKey, setUploadKey] = useState<number>(0);
 
-  const { setFiles } = useUploadFiles({
-    accept: 'image/*, audio/*, video/*',
-    maxFiles: 3,
-  });
   const [state, formAction, isPending] =
     // @ts-expect-error
     useActionState<EnviarDenunciaActionState>(enviarDenunciaAction, {
@@ -78,7 +75,7 @@ export default function FormDenunciaNewClient({
     ev.preventDefault();
     if (state?.data?.data[0]?.denuncia_id) {
       formDenunciaRef.current?.reset();
-      setFiles([]);
+      setUploadKey((k) => k + 1);
       setRecaptchaToken('');
       navigator.clipboard.writeText(state.data.data[0].denuncia_id);
       toast.success(toastLabels.copySuccess, { position: 'bottom-center' });
@@ -114,7 +111,11 @@ export default function FormDenunciaNewClient({
       />
       <div className='max-w-screen-sm mr-auto ml-auto'>
         <SectionTitle text={sectionTitles.adjuntos} />
-        <UploadFiles name='uploadFiles' />
+        <UploadFiles
+          key={uploadKey}
+          name='uploadFiles'
+          labels={labels.adjuntos}
+        />
         <input type='hidden' name='recaptchaToken' value={recaptchaToken} />
         <div className='flex items-center justify-center'>
           <Recaptcha

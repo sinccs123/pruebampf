@@ -78,6 +78,16 @@
       "onlineMessage": "Te responderé lo antes posible",
       "placeholder": "Envía tu consulta...",
       "placeholderSending": "Estoy pensando..."
+    },
+    "adjuntos": {
+      "placeholder": "Agregar / arrastrar archivos",
+      "helper": "(máximo {maxFiles} archivos de {maxFileSize} MB cada uno, {maxTotalSize} MB en total)",
+      "errors": {
+        "invalidType": "\"{fileName}\": tipo de archivo no permitido.",
+        "fileTooLarge": "\"{fileName}\": supera el máximo de {maxFileSize} MB por archivo.",
+        "tooManyFiles": "Solo se permiten {maxFiles} archivos; se descartaron los adicionales.",
+        "totalTooLarge": "El tamaño total supera el máximo de {maxTotalSize} MB; se descartaron algunos archivos."
+      }
     }
   },
   "menu": {
@@ -97,7 +107,7 @@
   "comoDenunciar": {
     "step1": "Paso 1",
     "step1Title": "Hacé tu denuncia",
-    "step1Text": "Podés realizarla de manera presencial en nuestros <a href='#whereReport' class='text-primary underline underline-offset-4 font-bold'>Puntos de Acceso</a> en la Ciudad. O también podés denunciar de forma online, por mail o por teléfono",
+    "step1Text": "Podés realizarla de manera presencial en nuestros <a href='#whereReport' class='text-primary underline underline-offset-4 font-bold'>Puntos de Acceso</a> en la Ciudad. O también podés denunciar de forma online, por mail o por teléfono.",
     "reportOnlineTitle": "/mpfciudad",
     "reportOnlineText": "DENUNCIA ONLINE",
     "reportEmailTitle": "denuncias@fiscalias.gob.ar",

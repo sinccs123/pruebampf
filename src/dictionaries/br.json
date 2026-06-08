@@ -78,6 +78,16 @@
       "onlineMessage": "I'll reply as soon as possible",
       "placeholder": "Ask your question...",
       "placeholderSending": "I'm thinking..."
+    },
+    "adjuntos": {
+      "placeholder": "Adicionar / arrastar arquivos",
+      "helper": "(máximo {maxFiles} arquivos de {maxFileSize} MB cada um, {maxTotalSize} MB no total)",
+      "errors": {
+        "invalidType": "\"{fileName}\": tipo de arquivo não permitido.",
+        "fileTooLarge": "\"{fileName}\": excede o limite de {maxFileSize} MB por arquivo.",
+        "tooManyFiles": "Apenas {maxFiles} arquivos são permitidos; os adicionais foram descartados.",
+        "totalTooLarge": "O tamanho total excede o limite de {maxTotalSize} MB; alguns arquivos foram descartados."
+      }
     }
   },
   "menu": {

@@ -42,10 +42,218 @@
   #whereReport {
     @apply scroll-m-[150px] lg:scroll-m-[50px];
   }
+
+  .footer-root {
+    @apply bg-primary px-6 py-10 text-white;
+  }
+
+  .footer-grid {
+    @apply flex flex-col gap-8;
+    width: min(100%, 1200px);
+    margin-inline: auto;
+  }
+
+  .footer-logo-wrap {
+    @apply max-w-52;
+  }
+
+  .footer-title {
+    @apply mb-2 font-bold text-secondary;
+  }
+
+  .footer-menu-item {
+    @apply py-0.5;
+  }
+
+  .footer-social-row {
+    @apply mt-1 flex flex-nowrap gap-3;
+  }
+
+  .footer-contact {
+    @apply flex flex-col gap-1;
+  }
+
+  .footer-contact-mobile {
+    @apply mt-4;
+  }
+
+  .footer-contact-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 480px) {
+  .footer-root {
+    @apply px-8;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-root {
+    @apply px-10 py-10;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    column-gap: 8rem;
+    row-gap: 0.5rem;
+    justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .footer-brand {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    @apply flex flex-col;
+  }
+
+  .footer-links {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .footer-social {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .footer-contact-mobile {
+    @apply mt-8;
+  }
+
+  .footer-logo-wrap {
+    @apply max-w-56;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-root {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: max-content 7.5rem max-content 3rem max-content;
+    row-gap: 1rem;
+    justify-content: center;
+    justify-items: start;
+  }
+
+  .footer-brand {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  .footer-links {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+  }
+
+  .footer-social {
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
+  }
+
+  .footer-contact-desktop {
+    display: flex;
+    grid-column: 5 / 6;
+    grid-row: 2 / 3;
+    @apply mt-4;
+  }
+
+  .footer-contact-mobile {
+    display: none;
+  }
+
+  .footer-logo-wrap {
+    max-width: 14rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .footer-root {
+    padding-left: 7.5rem;
+    padding-right: 10.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: max-content 5rem max-content 1.75rem max-content;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer-root {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: max-content 10rem max-content 4rem max-content;
+  }
+
+  .footer-logo-wrap {
+    max-width: 17rem;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1535px) {
+  .footer-desktop-row {
+    display: grid !important;
+    grid-template-columns: max-content 20rem max-content 2rem max-content;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .footer-desktop-logo-col {
+    grid-column: 1 / 2;
+  }
+
+  .footer-desktop-links-col {
+    grid-column: 3 / 4;
+  }
+
+  .footer-desktop-channels-col {
+    grid-column: 5 / 6;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .footer-desktop-row {
+    display: grid !important;
+    grid-template-columns: max-content 8rem max-content 0.5rem max-content;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .footer-desktop-logo-col {
+    grid-column: 1 / 2;
+  }
+
+  .footer-desktop-links-col {
+    grid-column: 3 / 4;
+  }
+
+  .footer-desktop-channels-col {
+    grid-column: 5 / 6;
+  }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/*
+  Force a stable Windows-safe stack for phone numbers across breakpoints.
+  This avoids sporadic glyph rendering issues reported for digit "8".
+*/
+.how-report-type-title-phone,
+.how-report-step-copy a[href^='tel:'] {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-variant-ligatures: none;
+  font-feature-settings: 'liga' 0, 'clig' 0;
 }
 
 .denunciaAhoraSticky {
@@ -101,14 +309,14 @@ html {
 
   .how-report-type-title-phone {
     display: inline-block;
-    font-family: Arial, sans-serif;
+    font-family: 'Heebo', sans-serif;
     white-space: nowrap !important;
   }
 
   .how-report-step-copy a[href^='tel:'] {
     display: inline-block;
     padding-left: 0.08em;
-    font-family: Arial, sans-serif;
+    font-family: 'Heebo', sans-serif;
     white-space: nowrap !important;
   }
 
@@ -157,11 +365,11 @@ html {
   .recommendations-block {
     background-color: #d3d8e0 !important;
     background-size: 22rem auto !important;
-    background-position: calc(100% - 16rem) bottom !important;
+    background-position: calc(100% - 12rem) bottom !important;
   }
 
   .recommendations-list {
-    width: 72% !important;
+    width: 68% !important;
     margin-right: auto !important;
   }
 
@@ -183,14 +391,14 @@ html {
 
   .how-report-type-title-phone {
     display: inline-block;
-    font-family: Arial, sans-serif;
+    font-family: 'Heebo', sans-serif;
     white-space: nowrap !important;
   }
 
   .how-report-step-copy a[href^='tel:'] {
     display: inline-block;
     padding-left: 0.08em;
-    font-family: Arial, sans-serif;
+    font-family: 'Heebo', sans-serif;
     white-space: nowrap !important;
   }
 
@@ -360,14 +568,14 @@ html {
   .ultra-wide-type .how-report-type-title-phone {
     display: inline-block;
     padding-left: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Heebo', sans-serif;
     white-space: nowrap !important;
   }
 
   .ultra-wide-type .how-report-step-copy a[href^='tel:'] {
     display: inline-block;
     padding-left: 0.08em;
-    font-family: Arial, sans-serif;
+    font-family: 'Heebo', sans-serif;
     white-space: nowrap !important;
   }
 
@@ -451,7 +659,7 @@ html {
   font-family: 'Heebo';
   font-style: normal;
   font-weight: 400;
-  src: url('../../public/fonts/Heebo-VariableFont_wght.ttf') format('ttf');
+  src: url('../../public/fonts/Heebo-VariableFont_wght.ttf') format('truetype');
 }
 
 .font-heebo {

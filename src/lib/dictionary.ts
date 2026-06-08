@@ -87,6 +87,16 @@ export interface Dictionary {
       placeholder: string;
       placeholderSending: string;
     };
+    adjuntos: {
+      placeholder: string;
+      helper: string;
+      errors: {
+        invalidType: string;
+        fileTooLarge: string;
+        tooManyFiles: string;
+        totalTooLarge: string;
+      };
+    };
   };
   menu: {
     home: string;
