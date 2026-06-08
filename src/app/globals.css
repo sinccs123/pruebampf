@@ -220,6 +220,27 @@
   }
 }
 
+@media (min-width: 1600px) {
+  .footer-desktop-row {
+    display: grid !important;
+    grid-template-columns: max-content 24rem max-content 2rem max-content;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .footer-desktop-logo-col {
+    grid-column: 1 / 2;
+  }
+
+  .footer-desktop-links-col {
+    grid-column: 3 / 4;
+  }
+
+  .footer-desktop-channels-col {
+    grid-column: 5 / 6;
+  }
+}
+
 @media (min-width: 1024px) and (max-width: 1279px) {
   .footer-desktop-row {
     display: grid !important;
